@@ -1,0 +1,15 @@
+{
+    "name": "egibide/shop",
+    "description": "Proyect de ejemplode namespace y tal",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Egibide\\Shop\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "8.0.x-dev"
+    }
+}

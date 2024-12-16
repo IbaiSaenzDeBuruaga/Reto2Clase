@@ -1,0 +1,18 @@
+body{
+	text-align: center !important;
+}
+.green{
+	background-color: lime;
+}
+.blue{
+	background-color: lightblue;
+}
+.grey{
+	background-color: darkgrey;
+}
+.salmon{
+	background-color: salmon;
+}
+.cyan{
+	background-color: cyan;
+}
