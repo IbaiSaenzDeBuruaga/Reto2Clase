@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 {
     protected $fillable = ['nombre'];
-   public function peticiones(){
-       return $this->hasMany(Peticione::class);
-   }
+
+    public function produtos(){
+        return $this->hasMany('App\Models\Peticione');
+    }
 }

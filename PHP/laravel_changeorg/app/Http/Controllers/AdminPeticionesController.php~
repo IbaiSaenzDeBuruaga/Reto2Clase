@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Peticione;
+use Illuminate\Http\Request;
+
+class AdminPeticionesController extends Controller
+{
+    public function index(Request $request){
+        $peticiones = Peticione::paginate(5);
+        return view('adminpeticiones.index', compact('peticiones'));
+    }
+    //
+}

@@ -1,0 +1,50 @@
+@use "sass:map";
+
+$blanco:#fff;
+$gris:#333;
+$morado:rgb(155,111,145);
+$border : (
+    "pequeño" : .2rem,
+    "mediano" : 1rem,
+    "grande" : 2rem
+);
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.card{
+    border: map-get($map: $border, $key: pequeño) solid $gris;
+    border-radius: .75rem;
+    width: 25%;
+    display: inline-block;
+    margin: .5rem;
+    img{
+        width: 100%;
+        padding: .5rem;
+    }
+    figcaption{
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+}
+nav{
+    margin-bottom: .5rem;
+    ul{
+        display: flex;
+        background-color: $morado;
+        justify-content: space-evenly;
+        padding: 1em;
+    }
+    li{
+        text-decoration: none;
+        list-style: none;
+    }
+    .active{
+        color: $blanco;
+    }
+}

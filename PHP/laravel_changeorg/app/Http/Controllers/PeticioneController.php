@@ -8,17 +8,20 @@ use App\Models\Peticione;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Routing\Controller;
 
 
 
 class PeticioneController extends Controller
 {
-    public function __construct(){
-        //$this->middleware('auth')->except(['index', 'show']);
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
-    public function index(Request $request){
+
+    public function index(Request $request)
+    {
         $peticiones = Peticione::all();
         return view('peticiones.index', compact('peticiones'));
     }
@@ -82,7 +85,7 @@ class PeticioneController extends Controller
         $fileModel->peticione_id = $peticione_id;
         if($request->hasFile('file')){
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $filePath = $file->storeAs('imagenes/peticiones', $filename, 'public');
+            $filePath = $file->storeAs('imagenes/peticiones', $filename, 'local');
             $fileModel->name = $filename;
             $fileModel->file_path = $filePath;
             $res = $fileModel->save();
@@ -94,6 +97,29 @@ class PeticioneController extends Controller
         }
         return 1;
     }
+
+    public function firmar(Request $request, $id)
+    {
+        try {
+            $peticion = Peticione::findOrFail($id);
+            $user = Auth::user();
+            $firmas = $peticion->firmas??[];
+            foreach ($firmas as $firma) {
+                if ($firma->id == $user->id) {
+                    return back()->withError( "Ya has firmado esta petición")->withInput();
+                }
+            }
+            $user_id = [$user->id];
+            $peticion->firmas()->attach($user_id);
+            $peticion->firmantes = $peticion->firmantes + 1;
+            $peticion->save();
+        }catch (\Exception $exception){
+            return back()->withError( $exception->getMessage())->withInput();
+        }
+        return redirect()->back();
+    }
+
+
 
 
 }

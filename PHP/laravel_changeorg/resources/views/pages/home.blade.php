@@ -22,7 +22,7 @@
                         <div class="carousel-caption">
                             <h3>La mayor plataforma de peticiones del mundo</h3>
                             <p>485.044.407 personas que pasan a la acción</p>
-                            <div class="text-center  mt-5"><a type="button" class="btn btn-danger center-block" href="#">Inicia una petición</a></div>
+                            <div class="text-center  mt-5"><a type="button" class="btn btn-danger center-block" href="">Inicia una petición</a></div>
                         </div>
                     </div>
                     <div class="carousel-item">

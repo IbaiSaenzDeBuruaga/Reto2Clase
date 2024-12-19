@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class EventType extends Model
 {
     protected $fillable = [
-        'description',
+        'description'
     ];
-    public function eventType(){
-        return $this->belongsTo('App\Models\EventType');
+    public function events(){
+        return $this->hasMany(Event::class);
     }
-    //
 }

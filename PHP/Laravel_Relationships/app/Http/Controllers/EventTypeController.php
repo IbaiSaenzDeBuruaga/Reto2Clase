@@ -2,43 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\EventType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Nette\Utils\Type;
 
 class EventTypeController extends Controller
 {
-    public function listTypes(): JsonResponse
-    {
-        $events = EventType::all();
-        return response()->json(['message'=>null,'data'=>$events],200);
-    }
-
     public function create(Request $request)
     {
-        // Valida los datos de la solicitud
-        $validator = Validator::make($request->all(), [
-            'description' => 'required'
-        ]);
-
-        // Si la validación falla, devuelve un mensaje de error
-        if ($validator->fails()) {
-            return response()->json(['message' => $validator->errors()], status: 422);
+        if (!auth()->check() || auth()->user()->cannot('create', EventType::class)) {
+            return response()->json(['message' => 'No autorizado'], 403);
         }
-
-        // Crea un nuevo evento con los datos validados
-        $event = EventType::create([
-            'description' => $request->get('description')
+        $validator = Validator::make($request->all(), [
+            'description' => 'required',
         ]);
-
-        // Devuelve una respuesta exitosa con los datos del evento creado
-        return response()->json(['message' => '', 'data' => $event], status: 201);
+        if ($validator->fails()) {
+            return response()->json(['message' => $validator->errors()], 400);
+        }
+        $event= EventType::create([
+            'description' => $request->get('description'),
+        ]);
+        return response()->json(['message' => '', 'data' => $event], 200);
     }
-
-
-
-    //
+    public function listTypes()
+    {
+        $events = EventType::all();
+        return response()->json(['message' => '', 'data' => $events], 200);
+    }
+    public function events(Type $type = null)
+    {
+        if ($type != null) {
+            $event = $type->event;
+            return response()->json(['message'=>'Tipos de Eventos', 'data'=>$event], 200);
+        }
+        return response()->json(['message'=>'No se encuentra el tipo de evento', 'data'=>[]], 404);
+    }
 }

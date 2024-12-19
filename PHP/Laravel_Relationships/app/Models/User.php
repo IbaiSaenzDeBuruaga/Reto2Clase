@@ -6,8 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -46,13 +47,22 @@ class User extends Authenticatable
         ];
     }
 
-    public function addresses(){
+    public function address(){
         return $this->hasOne(Address::class);
     }
+    public function events(){
+        return $this->belongsToMany(Event::class)->withPivot('note');
+    }
 
-    public function events()
+    // Metodo obligatorio de la interfaz
+    public function getJWTIdentifier()
     {
-        return $this->belongsToMany('App\Models\Event')->withPivot('note')->withTimestamps();
-}
+        return $this->getKey(); // Identificador único del usuario
+    }
+// Metodo obligatorio de la interfaz
+    public function getJWTCustomClaims()
+    {
+        return []; // Puedes agregar datos personalizados al token si es necesario
+    }
 
 }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIW - Diseño de Interfaces Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">DIW</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Categoria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header (simulating jumbotron) -->
+    <section class="bg-primary text-white py-3">
+        <div class="container">
+            <h1>Diseño de Interfaces Web</h1>
+            <p>Blog de diseño web</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main container my-4">
+        <div class="row">
+            <!-- Blog Posts -->
+            <main class="col-lg-8">
+                <!-- Post 1 -->
+                <article class="post clearfix mb-4">
+                    <img src="img/img1.jpg" class="thumb float-start me-3 img-thumbnail" alt="HTML5">
+                    <h2 class="post-title">Inicia proyectos HTML5 más rápido con Initializr</h2>
+                    <p>
+                        <span class="post-fecha">26 de enero</span>
+                        <span class="post-autor">por John Smith</span>
+                    </p>
+                    <p class="contenido">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="contenedor-botones mb-3">
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="#" class="btn btn-success">Comentarios <span class="badge bg-light text-success">40</span></a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post clearfix mb-4">
+                    <img src="img/img2.jpg" class="thumb float-start me-3 img-thumbnail" alt="HTML5">
+                    <h2 class="post-title">Inicia proyectos HTML5 más rápido con Initializr</h2>
+                    <p>
+                        <span class="post-fecha">26 de enero</span>
+                        <span class="post-autor">por John Smith</span>
+                    </p>
+                    <p class="contenido">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="contenedor-botones mb-3">
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="#" class="btn btn-success">Comentarios <span class="badge bg-light text-success">40</span></a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post clearfix mb-4">
+                    <img src="img/img3.jpg" class="thumb float-start me-3 img-thumbnail" alt="Cursor CSS">
+                    <h2 class="post-title">Inicia proyectos HTML5 más rápido con Initializr</h2>
+                    <p>
+                        <span class="post-fecha">26 de enero</span>
+                        <span class="post-autor">por John Smith</span>
+                    </p>
+                    <p class="contenido">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="contenedor-botones mb-3">
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <a href="#" class="btn btn-success">Comentarios <span class="badge bg-light text-success">40</span></a>
+                    </div>
+                </article>
+
+                <!-- Pagination -->
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">« Anterior</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Siguiente »</a></li>
+                    </ul>
+                </nav>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="col-lg-4">
+                <div class="mb-4">
+                    <h4>Categorías</h4>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active">Diseño Web</a>
+                        <a href="#" class="list-group-item list-group-item-action">CSS</a>
+                        <a href="#" class="list-group-item list-group-item-action">Cursos</a>
+                        <a href="#" class="list-group-item list-group-item-action">Desarrollo Web</a>
+                        <a href="#" class="list-group-item list-group-item-action">Elementos Web</a>
+                        <a href="#" class="list-group-item list-group-item-action">JQuery</a>
+                        <a href="#" class="list-group-item list-group-item-action">Recursos y herramientas</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Artículos recientes</h4>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <h4 class="h6">Inicia proyectos HTML más rápido con Initializr</h4>
+                            <p class="mb-0">Aprende como iniciar un proyecto HTML5 más rápido con Initializr</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <h4 class="h6">Inicia proyectos HTML más rápido con Initializr</h4>
+                            <p class="mb-0">Aprende como iniciar un proyecto HTML5 más rápido con Initializr</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <h4 class="h6">Inicia proyectos HTML más rápido con Initializr</h4>
+                            <p class="mb-0">Aprende como iniciar un proyecto HTML5 más rápido con Initializr</p>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">John Smith</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline text-md-end mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-primary">Inicio</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-primary">Cursos</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-primary">Contactos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

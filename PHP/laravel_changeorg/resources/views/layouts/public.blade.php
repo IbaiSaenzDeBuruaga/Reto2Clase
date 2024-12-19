@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand text-danger fs-2" href="{{route('home')}}">Change.org</a>
+        <a class="navbar-brand text-danger fs-2"  href="">Change.org</a> --->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,12 +35,12 @@
                     <a class="nav-link fs-4 m-2" href="{{route('peticiones.mine')}}">Mis peticiones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-4 m-2" href="#">Mis firmas</a>
+                    <a class="nav-link fs-4 m-2" href="">Mis firmas</a>
                 </li>
                 <?php }?>
                 <?php if (Auth::check() && Auth::user()->role_id==2){ ?>
                 <li class="nav-item">
-                    <a class="nav-link fs-4 m-2 link-danger" href="{{}}">Admin</a>
+                    <a class="nav-link fs-4 m-2 link-danger" href="">Admin</a>
                 </li>
                 <?php } ////route('adminpeticiones.index')?>
 
@@ -51,7 +51,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <img class="img-xs rounded-circle" src="{{asset('vendor/assets/images/faces/face8.jpg')}}" alt="Profile image"> </a>
+                    <img class="img-xs rounded-circle" src="" alt="Profile image"> </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                     <div class="dropdown-header text-center">
                         <p class="mb-1 mt-3 font-weight-semibold"><?=Auth::user()->name?></p>
